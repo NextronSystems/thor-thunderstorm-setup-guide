@@ -1,0 +1,313 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. Install Thunderstorm Service &mdash; THOR Thunderstorm Manual  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Next Steps" href="next-steps.html" />
+    <link rel="prev" title="1. Requirements" href="requirements.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> THOR Thunderstorm Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">1. Requirements</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Install Thunderstorm Service</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#get-a-service-license">2.1. Get a Service License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#download-thunderstorm-installer-script">2.2. Download Thunderstorm Installer Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-required-packages">2.3. Install Required Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-thunderstorm-installer-script">2.4. Run Thunderstorm Installer Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging">2.5. Debugging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#most-common-problems">2.5.1. Most Common Problems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#access-the-web-gui">2.5.2. Access the Web GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-the-log-file">2.5.3. Check the Log File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#start-service-manually">2.5.4. Start Service Manually</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#silent-installation">2.6. Silent Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uninstall-thunderstorm">2.7. Uninstall Thunderstorm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="next-steps.html">3. Next Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="links-and-references.html">4. Links and References</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">THOR Thunderstorm Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>2. Install Thunderstorm Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/usage/install-thunderstorm-service.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="install-thunderstorm-service">
+<h1>2. Install Thunderstorm Service<a class="headerlink" href="#install-thunderstorm-service" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="get-a-service-license">
+<h2>2.1. Get a Service License<a class="headerlink" href="#get-a-service-license" title="Permalink to this headline">¶</a></h2>
+<p>To run THOR in Thunderstorm service mode, you need a license of a
+special type named „Service” license that allows this mode of operation.</p>
+<div class="figure" id="id1">
+<a class="reference external image-reference" href="../_images/image3.png"><img alt="Service License Type in Customer Portal" src="../_images/image3.png" /></a>
+<p class="caption"><span class="caption-text">Service License Type in Customer Portal</span></p>
+</div>
+</div>
+<div class="section" id="download-thunderstorm-installer-script">
+<h2>2.2. Download Thunderstorm Installer Script<a class="headerlink" href="#download-thunderstorm-installer-script" title="Permalink to this headline">¶</a></h2>
+<p>Use the Thunderstorm installer script <strong>thunderstorm-installer.sh</strong> for
+Linux systems published in our Github repository:</p>
+<p><a class="reference external" href="https://github.com/NextronSystems/nextron-helper-scripts/tree/master/thunderstorm">https://github.com/NextronSystems/nextron-helper-scripts/tree/master/thunderstorm</a></p>
+</div>
+<div class="section" id="install-required-packages">
+<h2>2.3. Install Required Packages<a class="headerlink" href="#install-required-packages" title="Permalink to this headline">¶</a></h2>
+<p>The Installer script requires the tools <strong>wget</strong> and <strong>unzip</strong>. Install
+these tools on your Linux server system with:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">wget</span> <span class="n">unzip</span>
+
+<span class="n">sudo</span> <span class="n">yum</span> <span class="n">install</span> <span class="n">wget</span> <span class="n">unzip</span>
+
+<span class="n">sudo</span> <span class="n">zypper</span> <span class="n">install</span> <span class="n">wget</span> <span class="n">unzip</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-thunderstorm-installer-script">
+<h2>2.4. Run Thunderstorm Installer Script<a class="headerlink" href="#run-thunderstorm-installer-script" title="Permalink to this headline">¶</a></h2>
+<p>Make sure that the license file is in the current working directory
+together with the thunderstorm-installer.sh and run the following
+commands:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">thunderstorm</span><span class="o">-</span><span class="n">installer</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>The script will show you the changes that it’s going to make and asks
+for a confirmation.</p>
+<div class="figure" id="id2">
+<a class="reference external image-reference" href="../_images/image4.png"><img alt="Thunderstorm Installer" src="../_images/image4.png" /></a>
+<p class="caption"><span class="caption-text">Thunderstorm Installer</span></p>
+</div>
+</div>
+<div class="section" id="debugging">
+<h2>2.5. Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="most-common-problems">
+<h3>2.5.1. Most Common Problems<a class="headerlink" href="#most-common-problems" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Wrong or expired license</li>
+<li>Port 8080 is already in use</li>
+</ul>
+</div>
+<div class="section" id="access-the-web-gui">
+<h3>2.5.2. Access the Web GUI<a class="headerlink" href="#access-the-web-gui" title="Permalink to this headline">¶</a></h3>
+<p>Check the Web GUI on: ﻿<a class="reference external" href="http://0.0.0.0:8080/">http://0.0.0.0:8080/</a></p>
+</div>
+<div class="section" id="check-the-log-file">
+<h3>2.5.3. Check the Log File<a class="headerlink" href="#check-the-log-file" title="Permalink to this headline">¶</a></h3>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">tail</span> <span class="o">-</span><span class="mi">100</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">thunderstorm</span><span class="o">/</span><span class="n">thunderstorm</span><span class="o">.</span><span class="n">log</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-service-manually">
+<h3>2.5.4. Start Service Manually<a class="headerlink" href="#start-service-manually" title="Permalink to this headline">¶</a></h3>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>sudo ﻿/opt/nextron/thunderstorm/thor-linux-64 --thunderstorm -t /etc/thunderstorm/thunderstorm.yml
+</pre></div>
+</div>
+<p>Warning: in case of a successful service start, the log file will be
+created readable for root user only, make sure to delete if afterwards.
+An unwritable log file causes the service to fail.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>sudo ﻿rm /var/log/thunderstorm/thunderstorm.log
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="silent-installation">
+<h2>2.6. Silent Installation<a class="headerlink" href="#silent-installation" title="Permalink to this headline">¶</a></h2>
+<p>In cases in which you do not want the installer to prompt you for a
+confirmation (e.g. Docker installation), use the <strong>auto</strong> parameter.</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">./</span><span class="n">thunderstorm</span><span class="o">-</span><span class="n">installer</span><span class="o">.</span><span class="n">sh</span> <span class="n">auto</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="uninstall-thunderstorm">
+<h2>2.7. Uninstall Thunderstorm<a class="headerlink" href="#uninstall-thunderstorm" title="Permalink to this headline">¶</a></h2>
+<p>You can always uninstall THOR Thunderstorm with</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">./</span><span class="n">thunderstorm</span><span class="o">-</span><span class="n">installer</span><span class="o">.</span><span class="n">sh</span> <span class="n">uninstall</span>
+</pre></div>
+</div>
+<p>The only files that are left on a system are the log files in
+/var/log/thunderstorm.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="next-steps.html" class="btn btn-neutral float-right" title="3. Next Steps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="requirements.html" class="btn btn-neutral float-left" title="1. Requirements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Nextron Systems GmbH
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
