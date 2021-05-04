@@ -90,7 +90,7 @@ Forward Logs to SIEM or Analysis Cockpit
 
 Config entry to forward logs to a SIEM
 
-We recommend reading chapter 16 “Syslog” in the THOR User Manual for
+We recommend reading chapter 10.2 Syslog or TCP/UDP Output in the `THOR User Manual <https://thor-manual.nextron-systems.com/en/latest/>`_ for
 details on the SYSLOG forwarding flags. You can find it in the folder
 /opt/nextron/thunderstorm/docs after a successful Thunderstorm
 installation on Linux or in the “Downloads” section in the customer
@@ -233,8 +233,7 @@ to process all 400,000 files sent from a Windows 10 end system. Sending
 all files from 200 Windows 10 end systems to a Thunderstorm server with
 that specs would take up to 10 days to process all the samples.
 
-As a rule of thumb, when using the hardware recommended in a previous
-chapter of this manual, calculate with a processing speed of **250
+As a rule of thumb, when using the hardware recommended in :ref:`chapter 1.2 "Hardware Requirements" <usage/requirements:Hardware Requirements>`, calculate with a processing speed of **250
 samples per core per minute**.
 
 We highly recommend using the default configuration file named
@@ -295,11 +294,13 @@ results and batch submission should be as fast as possible.
 +====================================+==========================================+===============================================+
 | Server API Endpoint                | /api/check                               | /api/checkAsync                               |
 +------------------------------------+------------------------------------------+-----------------------------------------------+
-| ThunderstormAPI Client Parameter   |                                          | --asyn                                        |
+| | ThunderstormAPI 		     |						| --asyn					|
+| | Client Parameter   		     |                                          |       	                                |
 +------------------------------------+------------------------------------------+-----------------------------------------------+
 | Advantage                          | Returns Scan Result                      | Faster Submission                             |
 +------------------------------------+------------------------------------------+-----------------------------------------------+
-| Disadvantage                       | Client waits for result of each sample   | No immediate scan result on the client side   |
+| Disadvantage                       | Client waits for result of each sample   | | No immediate scan result 			|
+|				     |						| | on the client side   			|
 +------------------------------------+------------------------------------------+-----------------------------------------------+
 
 In asynchronous mode, the Thunderstorm service keeps the samples in a

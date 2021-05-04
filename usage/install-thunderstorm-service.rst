@@ -32,8 +32,12 @@ these tools on your Linux server system with:
 
    sudo apt install wget unzip 
 
+.. code:: bash 
+
    sudo yum install wget unzip 
 
+.. code:: bash 
+   
    sudo zypper install wget unzip
 
 

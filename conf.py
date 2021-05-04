@@ -39,6 +39,7 @@ release = ''
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.autosectionlabel'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -180,3 +181,10 @@ epub_exclude_files = ['search.html']
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}
+
+# Enable -- to -
+smartquotes = False
+
+# Use :ref: for subsections
+autosectionlabel_prefix_document = True
+autosectionlabel_maxdepth = 3
