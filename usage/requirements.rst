@@ -23,39 +23,57 @@ In cases in which only a few samples per minute have to be processed,
 even a dual core barebone system could be enough. However, in cases in
 which thousands of samples per minute should be processed, we recommend
 having a **high amount of CPU cores**, a decent amount of RAM and an SSD
-as hard disk for a faster processing of queued samples.
+as disk for a faster processing of queued samples.
 
-+----------------------------------------------+----------------------------------------+
-| Minimum                                      | Recommended                            |
-+==============================================+========================================+
-| 2 CPU Cores                                  | 12+ CPU Cores                          |
-|                                              |                                        |
-| 2 GB of RAM                                  | 16 GB of RAM                           |
-|                                              |                                        |
-| 5 GB of hard disk drive (for sample queue)   | 1 TB SSD hard drive                    |
-|                                              |                                        |
-|                                              | Highspeed Network Interface and Link   |
-+----------------------------------------------+----------------------------------------+
+.. list-table::
+   :header-rows: 1
+   :widths: 40, 30, 30
 
+   * - Component
+     - Minimum
+     - Recommended
+   * - CPU
+     - 2 CPU Cores
+     - 12+ CPU Cores
+   * - Memory
+     - 2 GB of RAM
+     - 16 GB of RAM
+   * - Disk Space (sample queue)
+     - 5 GB Hard Disk Drive
+     - 1 TB Solid State Drive
 
 Network Connections
 -------------------
 
-Web GUI and Sample Submission
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Web UI and Sample Submission
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-HTTP(S) on port 8080/tcp (can be changed in config)
+HTTP(S) on port 8080/tcp (can be changed in the config)
 
 Update Server
 ^^^^^^^^^^^^^
 
-update1.nextron-systems.com 443/tcp
+.. list-table::
+   :header-rows: 1
+   :widths: 50, 50
 
-update2.nextron-systems.com 443/tcp
+   * - Remote Server
+     - Port
+   * - update1.nextron-systems.com
+     - 443/tcp
+   * - update2.nextron-systems.com
+     - 443/tcp
 
 Installer
 ^^^^^^^^^
 
-portal.nextron-systems.com 443/tcp
+.. list-table::
+   :header-rows: 1
+   :widths: 50, 50
 
-cloud.nextron-systems.com 443/tcp
+   * - Remote Server
+     - Port
+   * - portal.nextron-systems.com
+     - 443/tcp
+   * - cloud.nextron-systems.com
+     - 443/tcp
