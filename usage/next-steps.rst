@@ -181,11 +181,40 @@ Thunderstorm Collectors
 -----------------------
 
 You can find a Thunderstorm collector for numerous different operating
-systems and architecture in our Github repository.
+systems and architecture in our Github repository. We recommend using the collectors written in Go.
 
 https://github.com/NextronSystems/thunderstorm-collector
 
-See the README on Github for more information.
+You find pre-compiled collector binaries in the `release <https://github.com/NextronSystems/thunderstorm-collector/releases>` section of the repository.
+
+See the `README <https://github.com/NextronSystems/thunderstorm-collector/blob/master/go/README.md>` on Github for more information.
+
+Run the Collectors
+^^^^^^^^^^^^^^^^^^
+
+We highly recommend using the `config.yml <https://github.com/NextronSystems/thunderstorm-collector/releases/latest/download/config.yml>` as a configuration during the collection. It limits the samples the collector selects for a submission to relevant file types and sizes. Otherwise the collector would transmit every possible file, which is usually not recommended.
+
+To retrieve the latest ``config.yml`` file, you can use the URL in the following listing or download it using ``wget``.
+
+.. code-block:: console
+
+   wget https://github.com/NextronSystems/thunderstorm-collector/releases/latest/download/config.yml
+
+You would then start a collector run using the following command line:
+
+Windows (64 bit):
+
+.. code-block:: console
+
+   amd64-windows-thunderstorm-collector.exe -t config.yml
+
+Linux (64 bit):
+
+.. code-block:: console
+
+   ./amd64-linux-thunderstorm-collector -t config.yml
+
+(Replace the collector binary name with the one you plan to use)
 
 Performance Considerations for the Collection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
