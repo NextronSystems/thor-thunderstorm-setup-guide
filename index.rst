@@ -14,6 +14,7 @@ THOR Thunderstorm Setup Guide
    usage/requirements
    usage/install-thunderstorm-service
    usage/next-steps
+   usage/maintenance
    usage/links-and-references
 
 
