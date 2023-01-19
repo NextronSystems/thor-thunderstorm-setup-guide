@@ -5,7 +5,7 @@ Get a Service License
 ---------------------
 
 To run THOR in Thunderstorm service mode, you need a license of a
-special type named "Service" license that allows this mode of operation.
+special type named ``Service`` license that allows this mode of operation.
 
 .. figure:: ../images/license_generation.png
    :target: ../_images/license_generation.png
