@@ -67,5 +67,7 @@ In order to add a new license, copy it to the ``/etc/thunderstorm/`` directory.
 
 The THOR Thunderstorm service will automatically pick the first valid license and use it. 
 
-If you've added a license with a higher quota limit (samples per hour) and the old one has
-not expired, you have to remove the old license so that the Thunderstorm service cannot select and use it.
+.. note:: 
+   If you've added a license with a higher quota limit (samples per hour) and the
+   old one has not expired, you have to remove the old license, so that the
+   Thunderstorm service cannot select and use it.
