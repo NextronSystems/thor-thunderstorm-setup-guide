@@ -45,10 +45,16 @@ as disk for a faster processing of queued samples.
 Network Connections
 -------------------
 
+For a detailed and up to date list of our update and licensing
+servers, please visit https://www.nextron-systems.com/hosts/.
+
 Web UI and Sample Submission
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-HTTP(S) on port 8080/tcp (can be changed in the config)
+The THOR Thunderstorm service is listening on port 8080/tcp.
+This can be changed in the configuration to any other port.
+Additionally, you can use HTTPs for the service. Please see
+the chapter :ref:`usage/next-steps:configuration`.
 
 Update Server
 ^^^^^^^^^^^^^
