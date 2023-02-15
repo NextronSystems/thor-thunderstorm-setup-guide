@@ -77,6 +77,11 @@ pygments_style = None
 #
 html_theme = 'sphinx_rtd_theme'
 
+html_theme_options = {
+    'prev_next_buttons_location': 'both',
+    'style_external_links': True
+}
+
 html_logo = "images/html/thor-thunderstorm-logo.png"
 html_favicon = "images/html/favicon.ico"
 
