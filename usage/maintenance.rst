@@ -31,6 +31,11 @@ The following command will restart the THOR Thunderstorm service:
 
    nextron@thunder:~$ sudo systemctl restart thor-thunderstorm.service
 
+.. warning:: 
+   Only restart the service if you are sure that no samples are in the queue.
+   The queue will get deleted once the service restarts, so only use this if
+   you are sure that no samples get lost.
+
 Review the Service Status
 -------------------------
 
@@ -59,6 +64,53 @@ Check if the service is listening on a port:
 .. code-block:: console 
 
    nextron@thunder:~$ sudo netstat -anpt | grep thor
+
+Update
+------
+
+There are two methods on how to update THOR Thunderstorm.
+
+The first method will only update the signatures. This is
+the safer option, since the service will not be restarted
+automatically.
+
+.. code-block:: console
+   :emphasize-lines: 9
+
+   user@unix:~$ sudo thunderstorm-update
+   [...]
+   Mar 21 15:54:21 unix THOR_UTIL: Info: Starting Upgrade Process
+   Mar 21 15:54:21 unix THOR_UTIL: Info: License file found OWNER: user TYPE: thunderstorm STARTS: 2023/03/21 EXPIRES: 2023/03/24
+   Mar 21 15:54:21 unix THOR_UTIL: Info: Downloading 'signatures'
+   Mar 21 15:54:21 unix THOR_UTIL: Info: Downloading from: https://update1.nextron-systems.com/[...]
+   Mar 21 15:54:21 unix THOR_UTIL: Info: already up-to-date
+   Successfully updated signatures
+   Now restart the Thunderstorm service at the next opportunity with: sudo systemctl restart thor-thunderstorm
+   Note: Use './thunderstorm-update full' to upgrade the binaries and signatures (warning: it will also restart the service automatically)
+
+The second method will also update the signatures and the
+THOR Thunderstorm binary. This should only be used when you
+are sure that the sample queue is empty and no samples are
+being scanned at the moment!
+
+.. code-block:: console
+   :emphasize-lines: 14
+
+   user@unix:~$ sudo thunderstorm-update full
+   [...]
+   Mar 21 15:58:47 unix THOR_UTIL: Info: Starting Upgrade Process
+   Mar 21 15:58:47 unix THOR_UTIL: Info: License file found OWNER: user TYPE: thunderstorm STARTS: 2023/03/21 EXPIRES: 2023/03/24
+   Mar 21 15:58:47 unix THOR_UTIL: Info: Downloading 'thor-linux'
+   Mar 21 15:58:47 unix THOR_UTIL: Info: Downloading from: https://update1.nextron-systems.com/[...]
+   Mar 21 15:58:48 unix THOR_UTIL: Info: already up-to-date
+   Mar 21 15:58:48 unix THOR_UTIL: Info: THOR 10 detected, also updating signatures ...
+   Mar 21 15:58:48 unix THOR_UTIL: Info: Starting Upgrade Process
+   Mar 21 15:58:48 unix THOR_UTIL: Info: License file found OWNER: user TYPE: thunderstorm STARTS: 2023/03/21 EXPIRES: 2023/03/24
+   Mar 21 15:58:48 unix THOR_UTIL: Info: Downloading 'signatures'
+   Mar 21 15:58:48 unix THOR_UTIL: Info: Downloading from: https://update1.nextron-systems.com/[...]
+   Mar 21 15:58:48 unix THOR_UTIL: Info: already up-to-date
+   Restarting Thunderstorm service ...
+   Successfully updated THOR and signatures
 
 Replace the License
 -------------------
