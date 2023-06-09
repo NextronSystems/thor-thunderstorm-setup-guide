@@ -27,7 +27,6 @@ as disk for a faster processing of queued samples.
 
 .. list-table::
    :header-rows: 1
-   :widths: 40, 30, 30
 
    * - Component
      - Minimum

@@ -368,11 +368,12 @@ Depending on the average size of the samples, the submission frequency
 and the number of different sources that submit samples, the
 transmission could take up to twice as much time.
 
-Note: The thunderstormAPI client doesn't verify the server's certificate
-by default as in this special case, secrecy isn't important. The main
-goal of the SSL/TLS encryption is an obscured method to transport
-potentially malicious samples over network segments that could be
-monitored by IDS/IPS systems. You can activate certificate checks with
-the ``--verify`` command line flag or ``verify`` parameter in API
-library's method respectively.
+.. note::
+   The thunderstormAPI client doesn't verify the server's certificate
+   by default as in this special case, secrecy isn't important. The main
+   goal of the SSL/TLS encryption is an obscured method to transport
+   potentially malicious samples over network segments that could be
+   monitored by IDS/IPS systems. You can activate certificate checks with
+   the ``--verify`` command line flag or ``verify`` parameter in API
+   library's method respectively.
 
