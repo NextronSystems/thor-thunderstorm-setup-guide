@@ -13,6 +13,13 @@ Since THOR also runs on Windows and macOS operating systems, THOR
 Thunderstorm can also be used on one of these platforms but without any
 support.
 
+License Requirements
+--------------------
+
+A valid service license is needed to use THOR Thunderstorm. Please see
+:ref:`usage/install-thunderstorm-service:get a service license` for more
+information.
+
 Hardware Requirements
 ---------------------
 
