@@ -1,0 +1,336 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "description": "This API allows you to send files to THOR to scan them and provides information about the running THOR instance.",
+        "title": "THOR Thunderstorm API",
+        "version": "10.6.0"
+    },
+    "paths": {
+        "/api/check": {
+            "post": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Check a file with THOR.",
+                "operationId": "check",
+                "parameters": [
+                    {
+                        "description": "Prettify output JSON",
+                        "name": "pretty",
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "description": "Specify source for the THOR log",
+                        "name": "source",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "file": {
+                                        "description": "File to be checked",
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "required": [
+                                    "file"
+                                ],
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Returns a Set with messages"
+                    },
+                    "400": {
+                        "description": "Invalid parameters given - no file, or multiple files, ..."
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    },
+                    "503": {
+                        "description": "Too many simultaneous requests, retry later"
+                    }
+                }
+            }
+        },
+        "/api/checkAsync": {
+            "post": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Check a file with THOR asynchronously",
+                "operationId": "checkAsync",
+                "parameters": [
+                    {
+                        "description": "Specify source for the THOR log",
+                        "name": "source",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "file": {
+                                        "description": "File to be checked",
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "required": [
+                                    "file"
+                                ],
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Returns a map containing the sample id"
+                    },
+                    "400": {
+                        "description": "Invalid parameters given - no file, or multiple files, ..."
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/getAsyncResults": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve the results of an asynchronous file check",
+                "operationId": "getAsyncResults",
+                "parameters": [
+                    {
+                        "description": "Prettify output JSON",
+                        "name": "pretty",
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "description": "Sample ID",
+                        "name": "id",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns a JSON with the current status and, if applicable, the results"
+                    },
+                    "400": {
+                        "description": "Invalid parameters - no ID specified, or ID invalid or not present in cache"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/queueHistory": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve a history of how many asynchronous requests were queued",
+                "operationId": "queueHistory",
+                "parameters": [
+                    {
+                        "description": "Prettify output JSON",
+                        "name": "pretty",
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "description": "Aggregate this many minutes per value (default 1)",
+                        "name": "aggregate",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "description": "Give a history for the last this many minutes (default infinite)",
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns a JSON Map with each time mapped to the queue length (estimated) from the last time mentioned to that time"
+                    },
+                    "400": {
+                        "description": "Invalid parameters - aggregate specified is no integer"
+                    }
+                }
+            }
+        },
+        "/api/sampleHistory": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve a history of how many samples were scanned",
+                "operationId": "sampleHistory",
+                "parameters": [
+                    {
+                        "description": "Prettify output JSON",
+                        "name": "pretty",
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "description": "Aggregate this many minutes per value (default 1)",
+                        "name": "aggregate",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "description": "Give a history for the last this many minutes (default infinite)",
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns a JSON Map with each time mapped to the samples scanned from the last time mentioned to that time"
+                    },
+                    "400": {
+                        "description": "Invalid parameters - aggregate specified is no integer"
+                    }
+                }
+            }
+        },
+        "/api/deniedHistory": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve a history of how many requests were denied",
+                "operationId": "deniedHistory",
+                "parameters": [
+                    {
+                        "description": "Prettify output JSON",
+                        "name": "pretty",
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "description": "Aggregate this many minutes per value (default 1)",
+                        "name": "aggregate",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "description": "Give a history for the last this many minutes (default infinite)",
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns a JSON Map with each time mapped to the requests denied from the last time mentioned to that time"
+                    },
+                    "400": {
+                        "description": "Invalid parameters - aggregate specified is no integer"
+                    }
+                }
+            }
+        },
+        "/api/info": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Receive static information about the running THOR instance.",
+                "operationId": "info",
+                "responses": {
+                    "200": {
+                        "description": "map with values to running version, rate limitation, ..."
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Prettify output JSON",
+                        "name": "pretty",
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ]
+            }
+        },
+        "/api/status": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Receive live information about the running THOR instance.",
+                "operationId": "status",
+                "responses": {
+                    "200": {
+                        "description": "map with values to scan times, scanned samples, wait times, ..."
+                    }
+                },
+                "parameters": [
+                    {
+                        "description": "Prettify output JSON",
+                        "name": "pretty",
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
