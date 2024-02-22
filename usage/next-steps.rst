@@ -82,6 +82,20 @@ Keep all samples
 
    server-store-samples: all
 
+Custom Signatures
+-----------------
+
+Since most of the functionalities of THOR are included
+in Thunderstorm, you can also include your own custom
+signatures. The process is identical to that of a normal THOR
+installation. Please see `the Custom Signatures chapter
+<https://thor-manual.nextron-systems.com/en/latest/usage/custom-signatures.html>`_
+in the THOR Manual.
+
+.. note::
+   Don't forget to :ref:`usage/maintenance:restart the service`
+   after placing your custom signatures in the dedicated directory.
+
 Log Output
 ----------
 
