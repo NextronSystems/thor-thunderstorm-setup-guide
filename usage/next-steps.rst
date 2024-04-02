@@ -120,7 +120,6 @@ An API documentation is integrated into the web service.
 Simply visit the service URL, e.g.: :samp:`http://my-server:8080/`
 
 .. figure:: ../images/thor_thunderstorm_api.png
-   :target: ../_images/thor_thunderstorm_api.png
    :alt: Thunderstorm API Documentation
 
    Thunderstorm API Documentation
@@ -174,7 +173,6 @@ The web GUI running on Port 8080 contains an interactive API
 documentation, which you can use to submit a first test sample.
 
 .. figure:: ../images/thor_thunderstorm_api_documentation.png
-   :target: ../_images/thor_thunderstorm_api_documentation.png
    :alt: Link to API Documentation on Start Page
 
    Link to API Documentation on Start Page
@@ -183,7 +181,6 @@ Select the API function ``/api/check``, then click "Try it out" and then
 select and submit a sample using the enabled form.
 
 .. figure:: ../images/thor_thunderstorm_api_check.png
-   :target: ../_images/thor_thunderstorm_api_check.png
    :alt: Test Sample Submission via API Documentation
 
    Test Sample Submission via API Documentation
