@@ -205,17 +205,10 @@ on Github for more information.
 Run the Collectors
 ^^^^^^^^^^^^^^^^^^
 
-We highly recommend using the `config.yml <https://github.com/NextronSystems/thunderstorm-collector/releases/latest/download/config.yml>`_
+We highly recommend using the `config.yml <https://github.com/NextronSystems/thunderstorm-collector/blob/master/go/config.yml>`_
 as a configuration during the collection. It limits the samples the collector selects
 for a submission to relevant file types and sizes. Otherwise the collector would transmit
 every possible file, which is usually not recommended.
-
-To retrieve the latest ``config.yml`` file, you can use the URL in the following listing
-or download it using ``wget``.
-
-.. code-block:: console
-
-   user@unix:~$ wget https://github.com/NextronSystems/thunderstorm-collector/releases/latest/download/config.yml
 
 You would then start a collector run using the following command line:
 
