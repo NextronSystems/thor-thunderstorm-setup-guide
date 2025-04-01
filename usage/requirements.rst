@@ -4,19 +4,14 @@ Requirements
 Supported Operating Systems
 ---------------------------
 
-The following versions are the minimum requirements for
-THOR Thunderstorm
+The following operating system versions are the minimum requirements for
+THOR Thunderstorm:
 
 * RHEL 7
 * CentOS 7
 * SuSE SLES 15
 * Ubuntu 18
 * Debian 9
-
-Since THOR also runs on Windows and macOS operating systems, THOR
-Thunderstorm could also be used on one of these platforms, but without any
-support from our side, since those are not the intended operating systems for
-THOR Thunderstorm.
 
 License Requirements
 --------------------
