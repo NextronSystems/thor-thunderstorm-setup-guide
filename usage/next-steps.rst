@@ -61,7 +61,7 @@ Forward Logs to SIEM or Analysis Cockpit
 Config entry to forward logs to a SIEM
 
 We recommend reading chapter
-`Syslog or TCP/UDP Output <https://thor-manual.nextron-systems.com/en/latest/usage/output-options.html#syslog-or-tcp-udp-output>`
+`Syslog or TCP/UDP Output <https://thor-manual.nextron-systems.com/latest/usage/output-options.html#syslog-or-tcp-udp-output>`
 in the THOR User Manual for details on the SYSLOG forwarding flags.
 You can find it in the folder ``/opt/nextron/thunderstorm/docs``
 after a successful Thunderstorm installation on Linux or in the
