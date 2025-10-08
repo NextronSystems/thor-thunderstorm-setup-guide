@@ -89,7 +89,7 @@ Since most of the functionalities of THOR are included
 in Thunderstorm, you can also include your own custom
 signatures. The process is identical to that of a normal THOR
 installation. Please see `the Custom Signatures chapter
-<https://thor-manual.nextron-systems.com/en/latest/usage/custom-signatures.html>`_
+<https://thor-manual.nextron-systems.com/latest/usage/custom-signatures.html>`_
 in the THOR Manual.
 
 .. note::
