@@ -13,6 +13,7 @@ THOR Thunderstorm Setup Guide
 
    usage/requirements
    usage/install-thunderstorm-service
+   usage/deploy-thunderstorm-container
    usage/next-steps
    usage/maintenance
    usage/api
