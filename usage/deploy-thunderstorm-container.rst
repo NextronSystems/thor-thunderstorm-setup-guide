@@ -1,8 +1,7 @@
 Deploy Thunderstorm as a Container
 ==================================
 
-THOR Thunderstorm can now also be deployed as a container. The
-deployment files and instructions are published in our Github
-repository:
+THOR Thunderstorm can also be deployed as a container.
+We provide a docker compose template and instructions in our GitHub repository:
 
 https://github.com/NextronSystems/thunderstorm-deployment
