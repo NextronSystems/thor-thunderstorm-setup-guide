@@ -18,3 +18,7 @@ Python based thunderstormAPI client module
 https://github.com/NextronSystems/thunderstormAPI
 
 https://pypi.org/project/thunderstormAPI
+
+Deploy Thunderstorm as a Container
+
+https://github.com/NextronSystems/thunderstorm-deployment
