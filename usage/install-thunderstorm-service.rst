@@ -87,12 +87,11 @@ for a confirmation.
    You can uninstall THOR Thunderstorm with './thunderstorm-installer uninstall'
 
    Are you ready to install THOR Thunderstorm? (y/N)y
-   Started Thunderstorm Installer - version 0.4.1 
-   Writing logfile to ./Thunderstorm_Installer_unix_20230105.log 
-   HOSTNAME: unix 
-   IP: 192.168.0.110  
-   OS: BUG_REPORT_URL="https://bugs.debian.org/";HOME_URL="https://www.debian.org/";ID=debian;NAME="Debian GNU/Linux";PRETTY_NAME="Debian GNU/Linux 10 (buster)";SUPPORT_URL="https://www.debian.org/support";VERSION="10 (buster)";VERSION_CODENAME=buster;VERSION_ID="10"; 
-   ISSUE: Nextron Systems - ASGARD Management Center - \l 
+   Started Thunderstorm Installer - version 0.4.1
+   Writing logfile to ./Thunderstorm_Installer_unix_20230105.log
+   HOSTNAME: unix
+   IP: 192.168.0.110
+   OS: BUG_REPORT_URL="https://bugs.debian.org/";HOME_URL="https://www.debian.org/";ID=debian;NAME="Debian GNU/Linux";PRETTY_NAME="Debian GNU/Linux 10 (buster)";SUPPORT_URL="https://www.debian.org/support";VERSION="10 (buster)";VERSION_CODENAME=buster;VERSION_ID="10";
    KERNEL: Linux unix 4.19.0-21-amd64 #1 SMP Debian 4.19.249-2 (2022-06-30) x86_64 GNU/Linux 
    Checking the required utilities ... 
    All required utilities found. 
