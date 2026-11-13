@@ -1,5 +1,10 @@
 version: 2
 
+submodules:
+  include:
+    - resources/thunderstorm-openapi
+  recursive: false
+
 # Set the OS, Python version and other tools you might need
 build:
   os: ubuntu-22.04
