@@ -125,9 +125,10 @@ Start Service Manually
 
    user@unix:~$ sudo /opt/nextron/thunderstorm/thor-linux-64 --thunderstorm -t /etc/thunderstorm/thunderstorm.yml
 
-Warning: in case of a successful service start, the log file will be
-created readable for root user only, make sure to delete if afterwards.
-An unwritable log file causes the service to fail.
+.. warning::
+   If the service starts successfully, the log file is created readable
+   for the root user only. Delete it afterwards, because the service fails
+   if it cannot write its log file.
 
 .. code-block:: console
    

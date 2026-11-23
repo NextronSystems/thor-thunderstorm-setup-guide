@@ -55,30 +55,27 @@ Forward Logs to SIEM or Analysis Cockpit
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: yaml
+   :caption: Config entry to forward logs to a SIEM
 
    syslog: mysiem.local
 
-Config entry to forward logs to a SIEM
-
 We recommend reading chapter
-`Syslog or TCP/UDP Output <https://thor-manual.nextron-systems.com/en/latest/usage/output-options.html#syslog-or-tcp-udp-output>`
-in the THOR User Manual for details on the SYSLOG forwarding flags.
+`Syslog or TCP/UDP Output <https://thor-manual.nextron-systems.com/en/latest/usage/output-options.html#syslog-or-tcp-udp-output>`_
+in the THOR User Manual for details on the syslog forwarding flags.
 You can find it in the folder ``/opt/nextron/thunderstorm/docs``
 after a successful Thunderstorm installation on Linux or in the
 "Downloads" section in the customer portal.
 
 Keep Samples on the Thunderstorm Server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Keep samples with findings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: yaml
+   :caption: Keep samples with findings
 
    server-store-samples: malicious
 
-Keep all samples
-
 .. code-block:: yaml
+   :caption: Keep all samples
 
    server-store-samples: all
 
@@ -139,7 +136,8 @@ and submit it to the service using the following commands.
 This should produce the following output in the current command line.
 
 .. code-block:: json
-   
+   :caption: Output of test sample submission
+
    [
       {
          "level": "Alert",
@@ -159,12 +157,10 @@ This should produce the following output in the current command line.
       }
    ]
 
-Output of test sample submission
-
-Be aware that this has been a "synchronous" submission to the API
-endpoint "check". The collection of high amounts of samples in collector
-scripts and tools uses the endpoint "checkAsync", which doesn't return a
-result to the submitting source.
+This was a synchronous submission to the ``/api/check`` endpoint.
+Collector scripts and tools that submit large numbers of samples use
+``/api/checkAsync``, which doesn't return a result to the submitting
+source.
 
 Test Submission Using the API Documentation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -378,6 +374,7 @@ transmission could take up to twice as much time.
    goal of the SSL/TLS encryption is an obscured method to transport
    potentially malicious samples over network segments that could be
    monitored by IDS/IPS systems. You can activate certificate checks with
-   the ``--verify`` command line flag or ``verify`` parameter in API
-   library's method respectively.
+   the ``verify_ssl`` parameter of the API library's ``ThunderstormAPI``
+   class. On the command line, pass the path to a CA bundle file with
+   ``--strict_ssl``.
 
