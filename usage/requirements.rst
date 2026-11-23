@@ -9,7 +9,7 @@ THOR Thunderstorm:
 
 * RHEL 7
 * CentOS 7
-* SuSE SLES 15
+* SUSE SLES 15
 * Ubuntu 18
 * Debian 9
 
@@ -23,14 +23,14 @@ information.
 Hardware Requirements
 ---------------------
 
-The hardware requirements highly depend on the number of samples per
+The hardware requirements depend heavily on the number of samples per
 minute that the service has to process.
 
 In cases in which only a few samples per minute have to be processed,
-even a dual core barebone system could be enough. However, in cases in
+even a dual-core system could be enough. However, in cases in
 which thousands of samples per minute should be processed, we recommend
-having a **high amount of CPU cores**, a decent amount of RAM and an SSD
-as disk for a faster processing of queued samples.
+having a **high number of CPU cores**, a decent amount of RAM and an SSD
+for faster processing of queued samples.
 
 .. list-table::
    :header-rows: 1
@@ -51,15 +51,15 @@ as disk for a faster processing of queued samples.
 Network Connections
 -------------------
 
-For a detailed and up to date list of our update and licensing
-servers, please visit https://www.nextron-systems.com/hosts/.
+For a detailed and up-to-date list of our update and licensing
+servers, please visit https://www.nextron-systems.com/resources/hosts/.
 
 Web UI and Sample Submission
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The THOR Thunderstorm service is listening on port 8080/tcp.
-This can be changed in the configuration to any other port.
-Additionally, you can use HTTPs for the service. Please see
+The THOR Thunderstorm service listens on port 8080/tcp.
+You can change the port in the configuration.
+You can also use HTTPS for the service. Please see
 the chapter :ref:`usage/next-steps:configuration`.
 
 Update Server
