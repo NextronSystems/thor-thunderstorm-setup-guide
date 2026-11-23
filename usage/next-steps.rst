@@ -7,7 +7,7 @@ Thunderstorm collectors or the Python API client.
 Configuration
 -------------
 
-The installation script for Linux system installs a service that passes
+The installation script for Linux installs a service that passes
 the parameter ``-t /etc/thunderstorm/thunderstorm.yml`` to initialize
 the default config stored at that location.
 
@@ -33,7 +33,7 @@ The default configuration file on Linux looks like this:
    # File Submissions
    # Directory to which the samples get stored in asynchronous mode
    server-upload-dir: /tmp/thunderstorm
-   # Permanently store the submitted samples (valied values: none/all/malicious)
+   # Permanently store the submitted samples (valid values: none/all/malicious)
    server-store-samples: none
    # Tuning
    # Server Result Cache
@@ -41,10 +41,10 @@ The default configuration file on Linux looks like this:
    # available for remote queries (default: 10000)
    #server-result-cache-size: 10000
 
-You can use all of THOR's flags in that configuration. Be advised that
-you always have to use their long form.
+You can use all THOR flags in that configuration, always in their
+long form.
 
-This page lists all of THOR command line flags:
+This page lists all THOR command line flags:
 
 https://github.com/NextronSystems/nextron-helper-scripts/tree/master/thor-help
 
@@ -102,22 +102,22 @@ Log Output
 The scan results and startup messages can be found in:
 
 .. code-block:: console
-   
+
    user@unix:~$ sudo less /var/log/thunderstorm/thunderstorm.log
 
 You could open another command line window and monitor new messages
 with:
 
 .. code-block:: console
-   
+
    user@unix:~$ sudo tail -f /var/log/thunderstorm/thunderstorm.log
 
 Thunderstorm API Documentation
 ------------------------------
 
-An API documentation is integrated into the web service.
+The web service includes interactive API documentation.
 
-Simply visit the service URL, e.g.: :samp:`http://my-server:8080/`
+Open the service URL, for example :samp:`http://my-server:8080/`
 
 .. figure:: ../images/thor_thunderstorm_api.png
    :alt: Thunderstorm API Documentation
@@ -131,7 +131,7 @@ To test the Thunderstorm service, you can create a tiny webshell sample
 and submit it to the service using the following commands.
 
 .. code:: bash
-   
+
    #!/bin/bash
    echo "<%eval request(" > test.txt                               
    curl -X POST "http://my-server:8080/api/check?pretty=true" -F "file=@test.txt"
@@ -169,15 +169,15 @@ result to the submitting source.
 Test Submission Using the API Documentation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The web GUI running on Port 8080 contains an interactive API
-documentation, which you can use to submit a first test sample.
+The web GUI on port 8080 contains interactive API documentation,
+which you can use to submit a first test sample.
 
 .. figure:: ../images/thor_thunderstorm_api_documentation.png
    :alt: Link to API Documentation on Start Page
 
    Link to API Documentation on Start Page
 
-Select the API function ``/api/check``, then click "Try it out" and then
+Select the API function ``/api/check``, click "Try it out", then
 select and submit a sample using the enabled form.
 
 .. figure:: ../images/thor_thunderstorm_api_check.png
@@ -185,22 +185,22 @@ select and submit a sample using the enabled form.
 
    Test Sample Submission via API Documentation
 
-The result appears in a separate text field. Use the "pretty" flag to
-get a prettified JSON response.
+The result appears in a separate text field. Set the ``pretty``
+parameter to get formatted JSON.
 
 Thunderstorm Collectors
 -----------------------
 
-You can find a Thunderstorm collector for numerous different operating
-systems and architecture in our Github repository. We recommend using the collectors written in Go.
+Our GitHub repository has Thunderstorm collectors for many operating
+systems and architectures. We recommend using the collectors written in Go.
 
 https://github.com/NextronSystems/thunderstorm-collector
 
-You find pre-compiled collector binaries in the `release <https://github.com/NextronSystems/thunderstorm-collector/releases>`_
+You can find pre-compiled collector binaries in the `releases <https://github.com/NextronSystems/thunderstorm-collector/releases>`_
 section of the repository.
 
 See the `README <https://github.com/NextronSystems/thunderstorm-collector/blob/master/go/README.md>`_
-on Github for more information.
+on GitHub for more information.
 
 Run the Collectors
 ^^^^^^^^^^^^^^^^^^
@@ -237,17 +237,17 @@ with the collectors (``config.yml``) and collect all files from an end
 system, the Thunderstorm server requires a much higher amount of time to
 process the samples.
 
-E.g. A Thunderstorm server with 40 CPU Cores (40 threads) needs 1 hour
-to process all 400,000 files sent from a Windows 10 end system. Sending
-all files from 200 Windows 10 end systems to a Thunderstorm server with
-that specs would take up to 10 days to process all the samples.
+For example, a Thunderstorm server with 40 CPU cores (40 threads) needs
+1 hour to process all 400,000 files sent from a Windows 10 end system.
+Sending all files from 200 Windows 10 end systems to a Thunderstorm
+server with those specs would take up to 10 days to process all the samples.
 
 As a rule of thumb, when using the hardware recommended in
 :ref:`usage/requirements:Hardware Requirements`, calculate
 with a processing speed of ``250 samples per core per minute``.
 
 We highly recommend using the default configuration file named
-``config.yml`` provided with the collectors. See the README on Github
+``config.yml`` provided with the collectors. See the README on GitHub
 for more information.
 
 Thunderstorm API Client
@@ -260,36 +260,35 @@ https://github.com/NextronSystems/thunderstormAPI
 
 It can be installed with:
 
-.. code-block:: console 
-   
-   user@unix:~$ pip install thunderstormAPI 
+.. code-block:: console
+
+   user@unix:~$ pip install thunderstormAPI
 
 Source Identification
 ---------------------
 
 The log file generated by THOR Thunderstorm doesn't contain the current
 host as hostname in each line. By default, it contains the sending
-source's FQDN or IP address if a name cannot be resolved using the
-locally configured DNS server.
+source's FQDN, or its IP address if the name cannot be resolved using
+the locally configured DNS server.
 
 However, every source can set a "source" value in the request and
-overwrite the automatically evaluated hostname. This way users can use
-custom values that are evaluated or set on the sending on the end
-system.
+overwrite the automatically evaluated hostname. This way, the end
+system can send a custom value that it sets or determines itself.
 
 .. code-block:: console
-   
-   user@unix:~$ curl -X POST "http://myserver:8080/api/check?source=test" -F "file=@sample.exe"
+
+   user@unix:~$ curl -X POST "http://my-server:8080/api/check?source=test" -F "file=@sample.exe"
 
 Synchronous and Asynchronous Mode
 ---------------------------------
 
-It is also important to mention that THOR Thunderstorm supports two ways
-to submit samples, a synchronous and an asynchronous mode.
+THOR Thunderstorm supports two ways to submit samples: synchronous and
+asynchronous mode.
 
 The default is synchronous submission. In this mode, the sender waits
-for the scan result, which can be empty in case of no detection or
-contains match elements in cases in which a threat could be identified.
+for the scan result, which is empty if nothing was detected and
+contains the matches if a threat was identified.
 
 In asynchronous mode, the submitter doesn't wait for the scan result but
 always gets a send receipt with an id, which can just be discarded or
@@ -325,11 +324,11 @@ web GUI.
 
 In environments in which the Thunderstorm service is used to handle
 synchronous and asynchronous requests at the same time, it is possible
-that all threads are busy processing cached asynchronous samples and not
-more synchronous requests are possible.
+that all threads are busy processing cached asynchronous samples and no
+synchronous requests can be served.
 
-In this case use the ``--sync-only-threads`` flag to reserve a number of
-threads for synchronous requests. (e.g. ``--threads 40 --sync-only-threads 10``)
+In this case, use the ``--sync-only-threads`` flag to reserve a number of
+threads for synchronous requests (for example, ``--threads 40 --sync-only-threads 10``).
 
 Performance Tests
 -----------------
@@ -337,10 +336,10 @@ Performance Tests
 Performance tests showed the differences between the two submission
 modes.
 
-In Synchronous mode, sample transmission and server processing take
+In synchronous mode, sample transmission and server processing take
 exactly the same time since the client always waits for the scan result.
 In asynchronous mode, the sample transmission takes much less time, but
-the processing on the server takes a bit longer, since the sever caches
+the processing on the server takes a bit longer, since the server caches
 the samples on disk.
 
 .. list-table::

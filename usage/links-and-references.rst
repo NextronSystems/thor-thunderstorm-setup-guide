@@ -13,7 +13,7 @@ Thunderstorm Helper Scripts
 
 https://github.com/NextronSystems/nextron-helper-scripts/tree/master/thunderstorm
 
-Python based thunderstormAPI client module
+Python-based thunderstormAPI client module
 
 https://github.com/NextronSystems/thunderstormAPI
 

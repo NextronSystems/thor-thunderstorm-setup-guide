@@ -16,14 +16,14 @@ Download Thunderstorm Installer Script
 --------------------------------------
 
 Use the Thunderstorm installer script ``thunderstorm-installer.sh`` for
-Linux systems published in our Github repository:
+Linux systems published in our GitHub repository:
 
 https://github.com/NextronSystems/nextron-helper-scripts/tree/master/thunderstorm
 
 Install Required Packages
 -------------------------
 
-The Installer script requires the tools ``wget`` and ``unzip``. To see
+The installer script requires the tools ``wget`` and ``unzip``. To see
 if those tools are installed, run the following command:
 
 .. code-block:: console
@@ -35,16 +35,16 @@ if those tools are installed, run the following command:
 If the output is empty or missing one of the tools, you can install
 the missing tools on your Linux system with one of the following commands:
 
-.. code-block:: console 
+.. code-block:: console
 
-   user@unix:~$ sudo apt install wget unzip 
+   user@unix:~$ sudo apt install wget unzip
 
-.. code-block:: console 
+.. code-block:: console
 
-   user@unix:~$ sudo yum install wget unzip 
+   user@unix:~$ sudo yum install wget unzip
 
-.. code-block:: console 
-   
+.. code-block:: console
+
    user@unix:~$ sudo zypper install wget unzip
 
 
@@ -64,7 +64,7 @@ for a confirmation.
 
 .. code-block:: console
 
-   user@unix:~$ sudo ./thunderstorm-installer.sh 
+   user@unix:~$ sudo ./thunderstorm-installer.sh
    [sudo] password for user: 
    ==============================================================
       ________                __            __                
@@ -72,7 +72,7 @@ for a confirmation.
       / / / _ \/ // / _ \/ _  / -_) __(_-</ __/ _ \/ __/  ' \ 
      /_/ /_//_/\_,_/_//_/\_,_/\__/_/ /___/\__/\___/_/ /_/_/_/ 
      v0.4.1
- 
+
      THOR Thunderstorm Service Installer
      Florian Roth, August 2022
    ==============================================================
@@ -130,27 +130,27 @@ created readable for root user only, make sure to delete if afterwards.
 An unwritable log file causes the service to fail.
 
 .. code-block:: console
-   
+
    user@unix:~$ sudo rm /var/log/thunderstorm/thunderstorm.log
 
 Silent Installation
 -------------------
 
-In cases in which you do not want the installer to prompt you for a
-confirmation (e.g. Docker installation), use the ``auto`` parameter.
+If you do not want the installer to ask for confirmation (for example,
+in a Docker build), use the ``auto`` parameter.
 
 .. code-block:: console
-   
+
    user@unix:~$ sudo ./thunderstorm-installer.sh auto
 
 Uninstall Thunderstorm
 ----------------------
 
-You can always uninstall THOR Thunderstorm with
+You can always uninstall THOR Thunderstorm with:
 
 .. code-block:: console
-   
+
    user@unix:~$ sudo ./thunderstorm-installer.sh uninstall
 
-The only files that are left on a system are the log files in
+The only files left on the system are the log files in
 ``/var/log/thunderstorm``.
